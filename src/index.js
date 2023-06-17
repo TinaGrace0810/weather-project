@@ -44,10 +44,18 @@ function getCurrentLocation(event) {
 }
 
 function showWeather(response) {
+  let descriptionElement = document.querySelector("#description");
+  let percipitationElement = document.querySelector("#percipitation");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  percipitationElement.innerHTML = response.data.weather[0].percipitation;
+  humidityElement.innerHTML = response.data.weather[0].humidity;
+  windElement.innerHTML = response.data.weather[0].wind;
 }
 
 function convertToFahrenheit(event) {
