@@ -7,16 +7,22 @@ color: rgba(117, 119, 112, 0.952);
  font-size: 26px;
  font-weight: 100;
  line height: 10px;
- margin: 0;
+ margin: auto 0;
+ padding: 5px;
 }
 
 h2 {
   color: rgba(103, 104, 96, 0.952);
+  font-size: 24px;
+ font-weight: 100;
+ line height: 10px;
+ margin: auto 0;
+
 }
 
 ul{
  margin: 0;
- padding: 0;
+ padding: 3px;
  }
 
 li {
@@ -31,8 +37,8 @@ li {
 
 .weather-app {
 
- border:5px solid rgb(20, 20, 20);
- padding: 10px;
+ border:5px ridge rgb(20, 20, 20);
+ padding: 12px;
  margin: auto 0;
  border radius: 15px;
  max-width: 500px;
@@ -56,9 +62,10 @@ line-height: 1;
 
 {
   padding: 15px;
+  font-size: 13px;
 }
 
 img {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
 }
