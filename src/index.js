@@ -20,16 +20,17 @@ let days = [
   "Saturday",
 ];
 function search(event) {
-  console.log({ event });
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
   let apiKey = "4801008bd454a1660025e22526898e68";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=metric`;
+
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showWeather);
 }
 
 function searchLocation(position) {
   alert(`Your latitude is ${latitude} and your longitude is ${longitude}`);
+
   let apiKey = "4801008bd454a1660025e22526898e68";
   let apiUrls = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
   // position.coords.latitude
@@ -54,9 +55,9 @@ function showWeather(response) {
     response.data.main.temp
   );
   descriptionElement.innerHTML = response.data.weather[0].description;
-  humidityElement.innerHTML = response.data.main.humidity;
-  windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  percipitationElement.innerHTML = response.data.weather[0].percipitation;
+  humidityElement.innerHTML = response.data.weather[0].humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -65,7 +66,6 @@ function showWeather(response) {
 
   getForecast(response.data.coord);
 }
-
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
