@@ -46,7 +46,7 @@ function getCurrentLocation(event) {
 
 function showWeather(response) {
   let descriptionElement = document.querySelector("#description");
-  let percipitationElement = document.querySelector("#percipitation");
+  let precipitationElement = document.querySelector("#precipitation");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
